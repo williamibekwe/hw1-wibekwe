@@ -98,5 +98,6 @@
   <scm>
   	<connection>scm:git:git@github.com:woibekwe1/hw1-wibekwe.git</connection>
   	<developerConnection>scm:git:git@github.com:woibekwe1/hw1-wibekwe.git</developerConnection>
+  	<tag>hw1-wibekwe-0.0.1</tag>
   </scm>
 </project>
