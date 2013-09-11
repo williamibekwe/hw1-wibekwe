@@ -28,19 +28,19 @@
 <types>
     <typeDescription>
       <name>nGram</name>
-      <description>A word or phrase that is collected from a list of tokens. </description>
+      <description>A word or phrase that is collected from a list of tokens.</description>
       <supertypeName>uima.cas.String</supertypeName>
     </typeDescription>
     <typeDescription>
       <name>nGramList</name>
       <description>A list of word or phrase combinations from a list of tokens with a specific cardinality. e.g. given the following set: "I am a legend", the list of elements in nGramList witha cardinality of two would be would be as follows: 
 
-"I am" "am a" "a legend"  "I a" "I legend" "am legend"  </description>
+"I am" "am a" "a legend"  "I a" "I legend" "am legend"</description>
       <supertypeName>uima.cas.StringList</supertypeName>
       <features>
         <featureDescription>
-          <name>wordOrPhrase</name>
-          <description/>
+          <name>Phrase</name>
+          <description>A specific ngram out of the cardinal set of ngrams</description>
           <rangeTypeName>nGram</rangeTypeName>
         </featureDescription>
         <featureDescription>
@@ -52,14 +52,9 @@
     </typeDescription>
     <typeDescription>
       <name>tokenList</name>
-      <description>list of all the tokens in the answer or a question. </description>
+      <description>list of all the tokens in the answer or a question.</description>
       <supertypeName>uima.cas.StringList</supertypeName>
       <features>
-        <featureDescription>
-          <name>numOftokens</name>
-          <description>number of tokens</description>
-          <rangeTypeName>uima.cas.Integer</rangeTypeName>
-        </featureDescription>
         <featureDescription>
           <name>token</name>
           <description>token in a list of tokens</description>
@@ -74,7 +69,7 @@
     </typeDescription>
     <typeDescription>
       <name>token</name>
-      <description>a word that consists of a combination of ascii symbols. </description>
+      <description>a word that consists of a combination of ascii symbols.</description>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
         <featureDescription>
@@ -84,7 +79,7 @@
         </featureDescription>
         <featureDescription>
           <name>endToken</name>
-          <description>check whether or not the token is an end word </description>
+          <description>check whether or not the token is an end word</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
         <featureDescription>
@@ -104,6 +99,16 @@
           <description>list of tokens from the question</description>
           <rangeTypeName>tokenList</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>NumOfTokens</name>
+          <description>Number of tokesn in token list</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>QuestionString</name>
+          <description>the entire question string</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
@@ -120,6 +125,11 @@
           <name>weight</name>
           <description>weight of a the answer</description>
           <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>AnswerString</name>
+          <description>the entire answer string</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
